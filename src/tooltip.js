@@ -6,6 +6,8 @@ import {
   Modal,
   TouchableWithoutFeedback,
   View,
+  Text,
+  TouchableOpacity
 } from 'react-native';
 import rfcIsEqual from 'react-fast-compare';
 import {
@@ -475,6 +477,7 @@ class Tooltip extends Component {
             onRequestClose={this.props.onClose}
             supportedOrientations={this.props.supportedOrientations}
           >
+            <View style={{zIndex:999,display:'flex',alignItems:'flex-end'}}><TouchableOpacity style={{marginRight:10,marginTop:10}} onPress={()=> this.setState({waitingForInteractions:true})}><Text style={{color:'white'}}>Skip tutorial X</Text></TouchableOpacity></View>
             {this.renderContentForTooltip()}
           </ModalComponent>
         ) : null}
