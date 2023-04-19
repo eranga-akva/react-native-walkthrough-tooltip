@@ -395,6 +395,10 @@ class Tooltip extends Component {
         >
           {this.props.children}
         </View>
+       <View style={{ zIndex: 9999, display: 'flex', alignItems: 'flex-end' }}><TouchableOpacity style={{ marginRight: 10, marginTop: 40 }} onPress={() => {
+          this.setState({ waitingForInteractions: true })
+          this.props.onClose();
+        }}><Text style={{ color: 'white' }}>Skip tutorial X</Text></TouchableOpacity></View>
       </TooltipChildrenContext.Provider>
     );
   };
